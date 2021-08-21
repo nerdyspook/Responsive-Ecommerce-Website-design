@@ -98,7 +98,7 @@ img {
 
 /* ============================ CLASS CSS ============================ */
 .section {
-  padding: 4rem 0 2rem;
+  padding: 4rem 0 2rem 0;
 }
 
 .section-title,
@@ -229,11 +229,54 @@ img {
 }
 
 /* ============================== HOME =============================== */
+.home__container {
+  height: calc(100vh - var(--header-height));
+  align-content: center;
+}
+
+.home__data {
+  text-align: center;
+}
+
+.home__title {
+  font-size: var(--big-font-size);
+  color: var(--dark-text-color);
+  margin-bottom: var(--mb-1);
+}
+
+.home__subtitle {
+  font-size: var(--h3-font-size);
+  color: var(--dark-text-color);
+  margin-bottom: var(--mb-4);
+}
 
 /* ============================ BUTTONS ============================== */
+.button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+}
+
+.button:hover {
+  border: 2px solid var(--primary-color);
+  background-color: var(--body-color);
+  color: var(--dark-text-color);
+}
 
 /* ============================= ABOUT =============================== */
 
+.about__description {
+  margin-bottom: var(--mb-3);
+}
+
+.about__img {
+  width: 280px;
+  border-radius: 0.5rem;
+  justify-self: center;
+}
 /* =========================== SERVICES ============================== */
 
 /* ============================= MENU ================================ */
