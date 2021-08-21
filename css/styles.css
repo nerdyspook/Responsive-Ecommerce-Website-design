@@ -5,10 +5,11 @@
 :root {
   --header-height: 3rem;
 
-  --primary-color: ;
+  --primary-color: #b91c1c;
   --secondary-color: ;
   --title-color: #4b5563;
   --text-color: #e5e7eb;
+  --dark-text-color: #374151;
   --text-color-light: #f9fafb;
   --body-color: #f9fafb;
   --container-color: #ffffff;
@@ -113,8 +114,119 @@ img {
   margin-bottom: var(--mb-1);
 }
 /* ============================= LAYOUT ============================== */
+.bd-container {
+  max-width: 960px;
+  width: calc(100% - 2rem);
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
 
+.bd-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--primary-color);
+}
 /* =========================== NAVIGATION ============================ */
+.nav {
+  max-width: 1024px;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem 0 1rem;
+    background-color: var(--primary-color);
+    transition: 0.4s;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 1rem 1rem;
+    z-index: var(--z-fixed);
+  }
+}
+
+.nav__item {
+  margin-bottom: var(--mb-2);
+}
+
+.nav__link,
+.nav__logo,
+.nav__toggle {
+  color: var(--text-color);
+  font-weight: var(--font-medium);
+}
+
+.nav__logo:hover {
+  color: var(--dark-text-color);
+}
+
+.nav__link {
+  transition: 0.3s;
+}
+
+.nav__link:hover {
+  color: var(--dark-text-color);
+}
+.nav__toggle {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* Show menu */
+.show {
+  top: var(--header-height);
+}
+
+/* Active menu */
+.active-link {
+  color: var(--dark-text-color);
+}
+
+/* Change background header */
+.scroll-header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* scrolltop */
+.scrolltop {
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+  background-color: rgb(6, 156, 84, 0.5);
+  border-radius: 0.4rem;
+  z-index: var(--z-tooltip);
+  transition: 0.4s;
+  visibility: hidden;
+}
+
+.scrolltop__icon {
+  font-size: 1.5rem;
+  color: var(--body-color);
+}
+
+/* Show scrolltop */
+.scroll-top {
+  visibility: visible;
+  bottom: 1.5rem;
+}
 
 /* ============================== HOME =============================== */
 
